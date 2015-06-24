@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="my.i906.klparkingspot">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".ParkingApp"
         android:allowBackup="true"

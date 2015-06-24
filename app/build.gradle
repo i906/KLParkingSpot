@@ -25,6 +25,12 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    configurations {
+        compile.exclude module: 'stax'
+        compile.exclude module: 'stax-api'
+        compile.exclude module: 'xpp3'
+    }
 }
 
 dependencies {
@@ -32,6 +38,11 @@ dependencies {
     compile 'com.android.support:appcompat-v7:22.2.0'
     compile 'com.android.support:recyclerview-v7:22.2.0'
     compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.4.0'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.retrofit:converter-simplexml:1.9.0'
+    compile 'org.simpleframework:simple-xml:2.7.1'
+    compile 'io.reactivex:rxandroid:0.24.0'
 
     compile 'com.google.dagger:dagger:2.0.1'
     apt 'com.google.dagger:dagger-compiler:2.0.1'
