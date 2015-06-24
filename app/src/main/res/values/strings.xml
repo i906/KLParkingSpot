@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">KL Parking Spot</string>
+
+    <!-- ElapsedTextView -->
+
+    <plurals name="label_elapsed">
+        <item quantity="one">%1$d %2$s ago</item>
+        <item quantity="other">%1$d %2$s ago</item>
+    </plurals>
+
+    <plurals name="label_elapsed_second">
+        <item quantity="one">sec</item>
+        <item quantity="other">secs</item>
+    </plurals>
+
+    <plurals name="label_elapsed_minute">
+        <item quantity="one">min</item>
+        <item quantity="other">mins</item>
+    </plurals>
+
+    <plurals name="label_elapsed_hour">
+        <item quantity="one">hour</item>
+        <item quantity="other">hours</item>
+    </plurals>
+
+    <plurals name="label_elapsed_day">
+        <item quantity="one">day</item>
+        <item quantity="other">days</item>
+    </plurals>
+
 </resources>
