@@ -18,7 +18,7 @@ public class ParkingActivity extends BaseActivity {
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .add(android.R.id.content, fragment)
+                    .add(R.id.fragment_container, fragment)
                     .commit();
         }
     }
