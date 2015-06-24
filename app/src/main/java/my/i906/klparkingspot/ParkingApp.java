@@ -1,4 +1,4 @@
-package my.i906.klparkingsport;
+package my.i906.klparkingspot;
 
 import android.app.Application;
 

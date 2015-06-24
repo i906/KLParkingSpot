@@ -1,4 +1,4 @@
-package my.i906.klparkingsport.fragment;
+package my.i906.klparkingspot.fragment;
 
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -9,7 +9,7 @@ import android.view.ViewGroup;
 import android.view.animation.AnimationUtils;
 
 import butterknife.InjectView;
-import my.i906.klparkingsport.R;
+import my.i906.klparkingspot.R;
 
 public abstract class BaseRecyclerFragment extends BaseFragment {
 
