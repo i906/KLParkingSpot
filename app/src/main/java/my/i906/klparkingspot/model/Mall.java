@@ -6,7 +6,7 @@ import org.simpleframework.xml.Root;
 import java.util.Date;
 
 @Root(strict=false)
-public class Mall {
+public class Mall implements Comparable<Mall> {
 
     @Element
     private String ID;
@@ -28,6 +28,28 @@ public class Mall {
 
     @Element
     private Date DATETIME;
+
+    public String getId() {
+        return ID;
+    }
+
+    public String getName() {
+        return NAME;
+    }
+
+    public int getLot() {
+        return LOT;
+    }
+
+    public Date getLastRefreshed() {
+        return DATETIME;
+    }
+
+    @Override
+    public int compareTo(Mall another) {
+        if (DATETIME == null) return 0;
+        return DATETIME.compareTo(another.DATETIME);
+    }
 
     @Override
     public String toString() {

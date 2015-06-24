@@ -11,6 +11,10 @@ public class Pgis {
     @ElementList(entry="MALL", inline=true)
     private List<Mall> malls;
 
+    public List<Mall> getMalls() {
+        return malls;
+    }
+
     @Override
     public String toString() {
         return "Pgis{" +

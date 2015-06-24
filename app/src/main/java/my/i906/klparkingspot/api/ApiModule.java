@@ -25,7 +25,7 @@ public class ApiModule {
     @Singleton
     public DbklApi provideDbklApi() {
 
-        DateFormat format = new SimpleDateFormat("dd/mm/yyyy HH:mm:ss");
+        DateFormat format = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         RegistryMatcher m = new RegistryMatcher();
         m.bind(Date.class, new DateFormatTransformer(format));
         Serializer ser = new Persister(m);
