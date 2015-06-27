@@ -34,6 +34,7 @@ public class MallView extends FrameLayout {
         super(context, attrs, defStyleAttr);
         LayoutInflater.from(context).inflate(R.layout.view_mall, this, true);
         ButterKnife.inject(this);
+        setLayoutParams(new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
     }
 
     public void setMall(Mall mall) {
