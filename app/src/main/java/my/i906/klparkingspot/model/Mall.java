@@ -18,7 +18,7 @@ public class Mall implements Comparable<Mall> {
     private String TYPE;
 
     @Element
-    private int LOT;
+    private String LOT;
 
     @Element
     private String STATE;
@@ -38,7 +38,15 @@ public class Mall implements Comparable<Mall> {
     }
 
     public int getLot() {
-        return LOT;
+        int lot = -1;
+
+        try {
+            lot = Integer.parseInt(LOT);
+        } catch (NumberFormatException nfe) {
+            /* .. */
+        }
+
+        return lot;
     }
 
     public Date getLastRefreshed() {
