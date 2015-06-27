@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:checkableBehavior="single">
+
+        <item android:id="@+id/menu_sort_availability"
+              android:title="@string/label_sort_by_availability" />
+
+        <item android:id="@+id/menu_sort_name"
+              android:title="@string/label_sort_by_name" />
+
+        <item android:id="@+id/menu_sort_updated"
+              android:title="@string/label_sort_by_last_updated"
+              android:checked="true" />
+
+    </group>
+
+</menu>

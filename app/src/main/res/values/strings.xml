@@ -38,4 +38,10 @@
     <string name="error_unexpected">Uhoh! We are not expecting this error!</string>
     <string name="label_retry">Retry</string>
 
+    <!-- ParkingFragment -->
+
+    <string name="label_sort_by_availability">Sort by availability</string>
+    <string name="label_sort_by_name">Sort by name</string>
+    <string name="label_sort_by_last_updated">Sort by last updated</string>
+
 </resources>
