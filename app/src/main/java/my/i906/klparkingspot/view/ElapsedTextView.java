@@ -1,6 +1,7 @@
 package my.i906.klparkingspot.view;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.os.Handler;
 import android.util.AttributeSet;
 import android.widget.TextView;
@@ -52,6 +53,7 @@ public class ElapsedTextView extends TextView {
     }
 
     private String getElapsedText() {
+        Resources r = getResources();
         long e = getElapsed();
         long u = getInterval();
         long t = e / u;
@@ -62,8 +64,12 @@ public class ElapsedTextView extends TextView {
         else if (e < UNIT_DAY) unitId = R.plurals.label_elapsed_hour;
         else unitId = R.plurals.label_elapsed_day;
 
-        String unit = getResources().getQuantityString(unitId, (int) t);
-        String text = getResources().getQuantityString(R.plurals.label_elapsed, (int) t, t, unit);
+        if (e < 0) {
+            return mPrefix + r.getString(R.string.label_moment_ago);
+        }
+
+        String unit = r.getQuantityString(unitId, (int) t);
+        String text = r.getQuantityString(R.plurals.label_elapsed, (int) t, t, unit);
         return mPrefix + text;
     }
 
@@ -83,8 +89,10 @@ public class ElapsedTextView extends TextView {
 
     private void startUpdating() {
         if (mUpdater == null) mUpdater = new ElapsedUpdater();
-        mHandler.post(mUpdater);
-        isUpdateTaskRunning = true;
+        if (!isUpdateTaskRunning) {
+            mHandler.post(mUpdater);
+            isUpdateTaskRunning = true;
+        }
     }
 
     private void stopUpdating() {
@@ -92,6 +100,12 @@ public class ElapsedTextView extends TextView {
             mHandler.removeCallbacks(mUpdater);
             isUpdateTaskRunning = false;
         }
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        startUpdating();
     }
 
     @Override

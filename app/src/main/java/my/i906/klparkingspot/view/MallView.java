@@ -40,6 +40,7 @@ public class MallView extends FrameLayout {
         int lot = mall.getLot();
         mNameView.setText(mall.getName());
         mLotView.setText(lot > 0 ? "" + lot : "OPEN");
+        mDateView.setPrefix("Updated ");
         mDateView.setDate(mall.getLastRefreshed());
     }
 }

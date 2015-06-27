@@ -28,4 +28,6 @@
         <item quantity="other">days</item>
     </plurals>
 
+    <string name="label_moment_ago">few moments ago</string>
+
 </resources>
