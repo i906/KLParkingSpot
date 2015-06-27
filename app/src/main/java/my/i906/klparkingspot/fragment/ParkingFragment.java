@@ -5,11 +5,13 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.view.View;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import my.i906.klparkingspot.adapter.MallAdapter;
 import my.i906.klparkingspot.model.Mall;
 import my.i906.klparkingspot.model.Pgis;
 import my.i906.klparkingspot.view.DividerItemDecoration;
+import rx.Observable;
 import rx.Subscriber;
 import rx.Subscription;
 import rx.android.schedulers.AndroidSchedulers;
@@ -48,11 +50,10 @@ public class ParkingFragment extends BaseRecyclerFragment {
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .map(Pgis::getMalls)
+                .repeatWhen(a -> a.flatMap(n -> Observable.timer(10, TimeUnit.SECONDS)))
                 .subscribe(new Subscriber<List<Mall>>() {
                     @Override
                     public void onCompleted() {
-                        mListContainer.setRefreshing(false);
-                        setListShown(true, true);
                     }
 
                     @Override
@@ -63,6 +64,8 @@ public class ParkingFragment extends BaseRecyclerFragment {
                     @Override
                     public void onNext(List<Mall> malls) {
                         mAdapter.setMallList(malls);
+                        mListContainer.setRefreshing(false);
+                        setListShown(true, true);
                     }
                 });
 
