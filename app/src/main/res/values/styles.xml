@@ -6,6 +6,28 @@
         <item name="colorAccent">@color/accent</item>
     </style>
 
+    <style name="Error"></style>
+
+    <style name="Error.Layout">
+        <item name="android:padding">64dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Error.LargeIcon">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:tint">@color/button_material_light</item>
+    </style>
+
+    <style name="Error.LargeIcon.Error">
+        <item name="android:src">@drawable/ic_cloud_error</item>
+    </style>
+
+    <style name="Error.Text" parent="Base.TextAppearance.AppCompat.Medium">
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:gravity">center</item>
+    </style>
+
     <style name="Mall"></style>
 
     <style name="Mall.Layout">

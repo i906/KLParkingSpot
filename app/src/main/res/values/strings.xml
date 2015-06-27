@@ -30,4 +30,12 @@
 
     <string name="label_moment_ago">few moments ago</string>
 
+    <!-- ErrorView -->
+
+    <string name="error_conversion">Oops! We are not able to parse DBKL\'s API!!</string>
+    <string name="error_http">Oops! There might be something wrong with DBKL\'s API!</string>
+    <string name="error_no_network">Oops! Have you checked your internet connection?</string>
+    <string name="error_unexpected">Uhoh! We are not expecting this error!</string>
+    <string name="label_retry">Retry</string>
+
 </resources>
